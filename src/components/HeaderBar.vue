@@ -19,7 +19,6 @@
       </nav>
     </header>
 
-    <div class="bg"></div>
   </div>
 </template>
 

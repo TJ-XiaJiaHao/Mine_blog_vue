@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <headerBar></headerBar>
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <div id="body">
+      <router-view name="sideBar"></router-view>
+      <router-view  name="mainPage"></router-view>
+    </div>
   </div>
 </template>
 
@@ -23,6 +25,13 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
+    margin-top: 50px;
+    height:100%;
+    width:100%;
+  }
+  #body{
+    width:100%;
+    height:calc(100% - 50px);
+    min-height:200px;
   }
 </style>
