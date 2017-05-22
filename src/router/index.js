@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Html from '@/components/Html'
 import Side from "@/components/SideBar"
+import Loading from "@/components/Loading"
+import Home from "@/components/Home"
 
 Vue.use(Router)
 
@@ -11,18 +13,17 @@ export default new Router({
     {
       path: '/',
       name: 'Hello',
-      components:{
-        default:Hello,
-        mainPage:Html,
-        sideBar:Side
-      },
+      components: {
+        loading:Loading,
+        mainPage:Home
+      }
     },
     {
       path: '/html',
       name: 'Html',
       components: {
-        mainPage:Html,
-        sideBar:Side
+        sideBar:Side,
+        mainPage:Html
       }
     }
   ]

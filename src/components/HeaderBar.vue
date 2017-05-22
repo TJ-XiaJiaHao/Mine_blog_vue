@@ -65,11 +65,15 @@
   /*导航元素样式*/
   .navbar-default .navbar-nav > li:hover {
     background: rgb(110, 158, 217);
+    color:white;
   }
 
   .navbar-default .navbar-nav > li > a {
     color: #ffffff;
     text-decoration: none;
+  }
+  .navbar-default .navbar-nav > li > a:hover{
+    color:white;
   }
 
   /*导航栏位置占领*/

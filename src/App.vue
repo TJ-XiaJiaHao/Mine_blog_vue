@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <router-view name="loading"></router-view>
     <headerBar></headerBar>
     <div id="body">
       <router-view name="sideBar"></router-view>
@@ -25,7 +26,7 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 50px;
+    padding-top: 50px;
     height:100%;
     width:100%;
   }
