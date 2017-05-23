@@ -5,6 +5,7 @@ import Html from '@/components/Html'
 import Side from "@/components/SideBar"
 import Loading from "@/components/Loading"
 import Home from "@/components/Home"
+import Article from "@/components/Article"
 
 Vue.use(Router)
 
@@ -12,10 +13,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
+      name: 'index',
       components: {
         loading:Loading,
         mainPage:Home
+      }
+    },
+    {
+      path: '/Hello',
+      name: 'Hello',
+      components: {
+        mainPage:Hello
       }
     },
     {
@@ -24,6 +32,14 @@ export default new Router({
       components: {
         sideBar:Side,
         mainPage:Html
+      }
+    },
+    {
+      path: '/course',
+      name: 'Course',
+      components: {
+        sideBar:Side,
+        mainPage:Article
       }
     }
   ]

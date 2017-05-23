@@ -7,7 +7,7 @@
             <ul class="nav navbar-nav">
               <li><a href="/">个人主页</a></li>
               <li><a href="/#/html">网页专区</a></li>
-              <li><a href="/">教程专区</a></li>
+              <li><a href="/#/course">教程专区</a></li>
             </ul>
             <form class="navbar-form navbar-right">
               <div class="has-feedback">

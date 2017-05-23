@@ -32,7 +32,7 @@
   }
   #body{
     width:100%;
-    height:calc(100% - 50px);
+    height:calc(100%);
     min-height:200px;
   }
 </style>
