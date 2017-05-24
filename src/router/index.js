@@ -6,6 +6,8 @@ import Side from "@/components/SideBar"
 import Loading from "@/components/Loading"
 import Home from "@/components/Home"
 import Article from "@/components/Article"
+import ArticleSideBar from "@/components/ArticleSideBar"
+import test from "@/components/test"
 
 Vue.use(Router)
 
@@ -38,8 +40,15 @@ export default new Router({
       path: '/course',
       name: 'Course',
       components: {
-        sideBar:Side,
+        sideBar:ArticleSideBar,
         mainPage:Article
+      }
+    },
+    {
+      path: '/test',
+      name: 'Course',
+      components: {
+        mainPage:test
       }
     }
   ]

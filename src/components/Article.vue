@@ -5,6 +5,7 @@
 </template>
 
 <script>
+  import bus from "../assets/eventBus"
     export default {
         name: 'hello',
         data () {
@@ -30,11 +31,18 @@
         },
         HtmlArticle:function(newHtmlArticle){
           $(".html-page").css("opacity","0").css("marginLeft","40px");
+          $(".article").scrollTop(0);
           $(".html-page").animate({opacity:'1',marginLeft:'0'},1000);
         }
       },
       mounted(){
-        this.readMark('Vue项目实战（一）——从0到1的蜕变.md');
+        var self = this;
+        this.readMark('Vue项目实战（一）.md');    //打开第一篇文章
+        //this.readMark('Vue的花式绑定.md');
+
+        bus.$on("openFile",function(msg){
+          self.readMark(msg + '.md');
+        });
       }
     }
 </script>

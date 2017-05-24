@@ -103,6 +103,7 @@
   #side{
     width:180px;
     height:100%;
+    min-height:400px;
     float:left;
   }
   .sidebar {
@@ -127,9 +128,9 @@
     padding-left: 10px;
     text-align: left;
     font-size: 16px;
-    height: 30px;
+    height: 40px;
     width: 100%;
-    line-height: 30px;
+    line-height: 40px;
     list-style: none;
     margin-bottom: 10px;
     overflow: hidden;
@@ -138,13 +139,14 @@
   .items li:hover {
     color: white;
     background: rgb(45, 137, 259);
+    border-right:4px solid rgba(0,0,0,0.4);
   }
 
   /*小图标*/
   .icon {
     width: 18px;
     height: 18px;
-    margin: 5px 5px 0 0;
+    margin: 10px 10px 0 0;
     -webkit-background-size: 18px 18px;
     background-size: 18px 18px;
     background-repeat:no-repeat;

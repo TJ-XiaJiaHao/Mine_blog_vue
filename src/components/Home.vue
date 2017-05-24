@@ -6,7 +6,7 @@
         <div class="left">
           <div class="pic-box">
             <div class="pic-border"></div>
-            <img class="pic" src="../assets/images/Home/pic1.jpg" alt=" "/>
+            <img class="pic" src="../assets/images/Home/summit.jpg" alt=" "/>
           </div>
         </div>
 
@@ -724,7 +724,7 @@
     padding-top:100px;
     cursor: pointer;
     opacity:0.3;
-
+    text-align: center;
   }
   .left-btn:hover,.right-btn:hover{
     opacity:0.8;
