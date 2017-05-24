@@ -309,6 +309,17 @@
           $('.pic-border').animate({opacity: '1'}, 1000);
         });
 
+        toastr.options = {
+          closeButton: true,
+          progressBar: true,
+          showMethod: 'slideDown',
+          positionClass:'toast-bottom-full-width',
+          timeOut: 4000
+        };
+        setTimeout(function(){ toastr.success("Welcom to my page,Sir!");},4000)
+
+
+        //时钟走起来
         this.clock($(".time-big"),$(".time-small"));
       },
       clock:function(domBig,domSmall){

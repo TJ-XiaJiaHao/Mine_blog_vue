@@ -8,14 +8,14 @@
             <div class="pic">
               <img v-bind:src="item.picURL"/>
               <div class="men">
-                <a id="futures" v-bind:href="item.link" target="_blank">{{ item.shortName }}</a>
+                <a v-bind:href="item.link" target="_blank">{{ item.shortName }}</a>
               </div>
             </div>
             <div class="description">
               <table>
                 <tr>
                   <td class="tb-key">名称：</td>
-                  <td calss="td-value">{{ item.projectName }}</td>
+                  <td calss="td-value project-name">{{ item.projectName }}</td>
                 </tr>
                 <tr>
                   <td class="tb-key">来源：</td>
@@ -73,6 +73,126 @@
                   stars:[true,true],
                   link:'http://www.xjh197.cn/html/threedme',
                   belong:2
+                },
+                {
+                  picURL:require("../assets/images/Html/html-nav.png"),
+                  shortName:"动态导航",
+                  projectName:"	动态导航",
+                  from:"腾讯课堂20160310",
+                  mainTec:"div + css + JQuery",
+                  stars:[true,true],
+                  link:'http://www.xjh197.cn/html/nav',
+                  belong:2
+                },
+                {
+                  picURL:require("../assets/images/Html/html-arpha.png"),
+                  shortName:"圆形菜单栏",
+                  projectName:"	圆形菜单栏",
+                  from:"中山大学web课程课后练习",
+                  mainTec:"transform + transition",
+                  stars:[true,true],
+                  link:'http://www.xjh197.cn/html/arpha',
+                  belong:2
+                },
+                {
+                  picURL:require("../assets/images/Html/html-youhuo.png"),
+                  shortName:"有货",
+                  projectName:"	有货轮播图",
+                  from:"腾讯课堂20160324",
+                  mainTec:"jQuery + animate",
+                  stars:[true,true],
+                  link:'http://www.xjh197.cn/html/youhuo',
+                  belong:3
+                },
+                {
+                  picURL:require("../assets/images/Html/html-car.png"),
+                  shortName:"3d小车",
+                  projectName:"	旋转的3d小车",
+                  from:"百度前端学院",
+                  mainTec:"THREEJS",
+                  stars:[true,true,true],
+                  link:'http://www.xjh197.cn/html/car',
+                  belong:4
+                },
+                {
+                  picURL:require("../assets/images/Html/html-showProduct3D.png"),
+                  shortName:"3D展柜",
+                  projectName:"	3D作品展示柜（Chrome 打开）",
+                  from:"动脑学院",
+                  mainTec:"transform + JQuery",
+                  stars:[true,true,true],
+                  link:'http://www.xjh197.cn/html/showProduct3D',
+                  belong:4
+                },
+                {
+                  picURL:require("../assets/images/Html/html-clock.png"),
+                  shortName:"时钟",
+                  projectName:"	行走的时钟",
+                  from:"大众点评2015校招编程题",
+                  mainTec:"transform + transition",
+                  stars:[true,true],
+                  link:'http://www.xjh197.cn/html/clock',
+                  belong:4
+                },
+                {
+                  picURL:require("../assets/images/Html/html-blog.png"),
+                  shortName:"个人博客",
+                  projectName:"	响应式个人博客",
+                  from:"web技术课程练习",
+                  mainTec:"flex + @media",
+                  stars:[true],
+                  link:'http://www.xjh197.cn/html/blog',
+                  belong:5
+                },
+                {
+                  picURL:require("../assets/images/Html/html-lift.png"),
+                  shortName:"电梯",
+                  projectName:"	电梯调度策略",
+                  from:"操作系统调度模块练习",
+                  mainTec:"div + css + JQuery",
+                  stars:[true,true],
+                  link:'http://www.xjh197.cn/html/lift',
+                  belong:5
+                },
+                {
+                  picURL:require("../assets/images/Html/html-tianmao.png"),
+                  shortName:"天猫购物",
+                  projectName:"	天猫购物平台",
+                  from:"腾讯课堂20160320",
+                  mainTec:"div + css + JQuery",
+                  stars:[true,true,true],
+                  link:'http://www.xjh197.cn/html/tianmao',
+                  belong:6
+                },
+                {
+                  picURL:require("../assets/images/Html/html-youji.png"),
+                  shortName:"游记",
+                  projectName:"papas游记",
+                  from:"Java EE课程第一次讨论项目（废）",
+                  mainTec:"div + css + animate",
+                  stars:[true,true],
+                  link:'http://www.xjh197.cn/html/youji',
+                  belong:6
+                },
+                {
+                  picURL:require("../assets/images/Html/html-projectCom.png"),
+                  shortName:"项目交流",
+                  projectName:"大学生项目交流平台",
+                  from:"上创第一次讨论项目（废）",
+                  mainTec:"div + css",
+                  stars:[true,true],
+                  link:'http://www.xjh197.cn/html/projectcommunication',
+                  belong:6
+                },
+                {
+                  picURL:require("../assets/images/Html/html-renzheshengui.png"),
+                  shortName:"忍者神龟",
+                  projectName:"忍者神龟",
+                  from:"中山大学web课程某次练习",
+                  mainTec:"div + css",
+                  stars:[true],
+                  link:'http://www.xjh197.cn/html/renzheshengui',
+                  belong:6
                 }
               ]
             }
@@ -85,7 +205,7 @@
             opacity:'1'
           }, {
             easing: 'swing',
-            duration: 500,
+            duration: 1000,
             complete: function () {
             }
           });
@@ -93,7 +213,7 @@
         disappear:function(dom){
           dom.css("display","none");
           dom.animate({
-            marginLeft: '50px',
+            marginLeft: '30px',
             opacity:'0'
           }, {
             easing: 'swing',
@@ -211,15 +331,11 @@
   }
   .description table tr td{
     height:45px;
-    color: #666;
     font-size:16px;
   }
   .tb-key{
     width:100px;
     font-weight:bold;
-  }
-  .td-value{
-    text-align: left;
   }
   .stars{
     width:120px;
