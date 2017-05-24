@@ -106,7 +106,7 @@
     float:left;
   }
   .sidebar {
-    background: #EBEBEB;
+    background: #F5F5F5;
     position: fixed;
     width: 180px;
     height: 100%;

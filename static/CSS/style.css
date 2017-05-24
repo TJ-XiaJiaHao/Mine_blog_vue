@@ -204,7 +204,7 @@ p.abt-para {
 }
 
 .abt-gd-left {
-  padding-top: 180px;
+  padding-top: 150px;
 }
 
 /*--pie-chart---*/
@@ -351,9 +351,6 @@ a.accordion-section-title span {
 
 /*-- Section Content --*/
 /*-- employment --*/
-.employment {
-  padding: 90px 0;
-}
 
 .employ-right h5 {
   font-size: 22px;
