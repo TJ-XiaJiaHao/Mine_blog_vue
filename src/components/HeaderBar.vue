@@ -4,6 +4,7 @@
       <nav class="navbar navbar-fixed-top navbar-default">
         <div class="container">
           <div>
+            <div class="list"><img src="../assets/images/headerBar/列表.png"></div>
             <ul class="nav navbar-nav">
               <li><a href="/" v-on:click ="noheight()">个人主页</a></li>
               <li><a href="/#/html" v-on:click="height()">网页专区</a></li>
@@ -45,6 +46,17 @@
       //导航栏动态切入
       $(".navbar-fixed-top").animate({top: '0', opacity: '1'}, 1000);
 
+      //list按钮
+      $(".list").click(function(){
+        var width = $(".navbar-nav").css("width");
+        if(width == "0px"){
+          $(".navbar-nav").animate({width:'300px'},1000)
+        }
+        else{
+          $(".navbar-nav").animate({width:'0'},1000)
+        }
+      });
+
       var self = this;
       bus.$on("nav",function(msg){
         if(msg == "toheight")self.height();
@@ -63,6 +75,8 @@
   .navbar-default {
     background: rgba(255,255,255,0);
     opacity:0.2;
+    overflow: hidden;
+    max-height:50px;
     -webkit-transition: background 0.5s ;
     -moz-transition: background 0.5s ;
     -ms-transition: background 0.5s ;
@@ -103,6 +117,19 @@
   }
   .navbar-default .navbar-nav > li > a:hover{
     color:white;
+  }
+
+  /*列表*/
+  .list{
+    width:50px;
+    height:50px;
+    padding:15px;
+    float:right;
+  }
+  .list img{
+    cursor: pointer;
+    height:100%;
+    width:100%;
   }
 
 </style>

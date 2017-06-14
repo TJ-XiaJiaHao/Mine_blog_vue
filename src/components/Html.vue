@@ -328,7 +328,7 @@
   /*文字介绍块*/
   .description{
     float:left;
-    margin-left:100px;
+    margin-left:20px;
     margin-top:33px;
   }
   .description table tr td{
