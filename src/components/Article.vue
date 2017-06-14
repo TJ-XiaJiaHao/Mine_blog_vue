@@ -38,13 +38,17 @@
       mounted(){
         var self = this;
         this.readMark('Vue项目实战（一）.md');    //打开第一篇文章
-        //this.readMark('Vue的花式绑定.md');
 
+        //修改导航栏样式，变为占领一部分高度
         bus.$emit("nav","toheight");
 
+        //监听文件切换事件
         bus.$on("openFile",function(msg){
           self.readMark(msg + '.md');
         });
+
+        //修改滚动条样式
+        $(".article").niceScroll({styler:"fb",cursorcolor:"#CCCCCC", cursorwidth: '6', cursorborderradius: '10px', background: 'rgb(245,245,245)', spacebarenabled:false, cursorborder: '0',  zindex: '1000'});
       }
     }
 </script>
