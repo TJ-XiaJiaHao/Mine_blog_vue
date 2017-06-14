@@ -41,6 +41,7 @@ toastr.js       ：用来做消息提示，用于个人网页
 bootstrap       ：主要用了他的网格系统
 pie-chart.js    ：用来绘制圆环，用于个人网站
 ```
+
 ### VueJS概述
     Vue定义：单页面组件化开发的前端框架，避免渲染重复组件，页面性能更高
     Vue模式：MVVM模式，Model + View + ViewModel，数据自动同步更新
@@ -49,3 +50,38 @@ pie-chart.js    ：用来绘制圆环，用于个人网站
  	    2.双向数据绑定
         3.指令
         4.插件化
+        
+### 欢迎动画展示
+    主要通过JQuery实现简单的动画效果
+    
+![Alt text](https://github.com/justPlay197/CSDN-VUE-MYWEB/blob/master/%E5%9B%BE%E7%89%87/%E6%AC%A2%E8%BF%8E%E5%8A%A8%E7%94%BB.png?raw=true) 
+
+### 个人主页展示
+    1、通过JQuery实现简单的页面过度过度效果
+    2、通过CSS的keyframes实现旋转动画
+    3、通过piechart实现圆环的绘制动画
+    4、通过监听滚动条事件来实现页面整体切换
+    
+![Alt text](https://github.com/justPlay197/CSDN-VUE-MYWEB/blob/master/%E5%9B%BE%E7%89%87/%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B501.png?raw=true)
+
+
+![Alt text](https://github.com/justPlay197/CSDN-VUE-MYWEB/blob/master/%E5%9B%BE%E7%89%87/%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B502.png?raw=true)
+
+
+![Alt text](https://github.com/justPlay197/CSDN-VUE-MYWEB/blob/master/%E5%9B%BE%E7%89%87/%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B503.png?raw=true)
+
+
+![Alt text](https://github.com/justPlay197/CSDN-VUE-MYWEB/blob/master/%E5%9B%BE%E7%89%87/%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B504.png?raw=true)
+ 
+### 个人作品展示
+
+    1、通过JQuery实现过度效果
+    2、通过Vue数据绑定实现动态切换作品
+    3、通过nicescroll美化滚动条样式
+    
+![Alt text](https://github.com/justPlay197/CSDN-VUE-MYWEB/blob/master/%E5%9B%BE%E7%89%87/%E7%BD%91%E7%AB%99%E4%BD%9C%E5%93%81.png?raw=true)
+ 
+### 个人博客展示
+  1、通过showmark实现markdown语法的转换
+  
+![Alt text](https://github.com/justPlay197/CSDN-VUE-MYWEB/blob/master/%E5%9B%BE%E7%89%87/%E6%96%87%E7%AB%A0%E5%8D%9A%E5%AE%A2.png?raw=true)
