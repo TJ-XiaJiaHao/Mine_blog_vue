@@ -40,6 +40,8 @@
         this.readMark('Vue项目实战（一）.md');    //打开第一篇文章
         //this.readMark('Vue的花式绑定.md');
 
+        bus.$emit("nav","toheight");
+
         bus.$on("openFile",function(msg){
           self.readMark(msg + '.md');
         });

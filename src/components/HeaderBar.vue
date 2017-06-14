@@ -1,19 +1,19 @@
 <template>
-  <div>
+  <div class="header">
     <header>
       <nav class="navbar navbar-fixed-top navbar-default">
         <div class="container">
           <div>
             <ul class="nav navbar-nav">
-              <li><a href="/">个人主页</a></li>
-              <li><a href="/#/html">网页专区</a></li>
-              <li><a href="/#/course">教程专区</a></li>
+              <li><a href="/" v-on:click ="noheight()">个人主页</a></li>
+              <li><a href="/#/html" v-on:click="height()">网页专区</a></li>
+              <li><a href="/#/course" v-on:click="height()">教程专区</a></li>
             </ul>
-            <form class="navbar-form navbar-right">
-              <div class="has-feedback">
-                <input type="text" class="form-control" name="s" id="navbar-search" value="" placeholder="搜索"/>
-              </div>
-            </form>
+            <!--<form class="navbar-form navbar-right">-->
+              <!--<div class="has-feedback">-->
+                <!--<input type="text" class="form-control" name="s" id="navbar-search" value="" placeholder="搜索"/>-->
+              <!--</div>-->
+            <!--</form>-->
           </div>
         </div>
       </nav>
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+  import bus from "../assets/eventBus"
   export default {
     name: 'headerBar2',
     data () {
@@ -30,17 +31,24 @@
         msg: 'Welcome to Your Vue.js App'
       }
     },
+    methods:{
+      height:function(){
+        $(".navbar-default").css("background","#4a86cf").css("borderColor"," #3968a1");
+        $(".header").css("height","50px");
+      },
+      noheight:function(){
+        $(".navbar-default").css("background","rgba(255,255,255,0)");
+        $(".header").css("height","0");
+      }
+    },
     mounted(){
       //导航栏动态切入
-      $(".navbar-fixed-top").animate({top: '0', opacity: '1'}, 600);
+      $(".navbar-fixed-top").animate({top: '0', opacity: '1'}, 1000);
 
-      //导航栏动态切出
-      /*$(".navbar-default .navbar-nav li a").click(function(){
-       $(".navbar-fixed-top").animate({opacity:'0'},100,function(){
-       $(".navbar-fixed-top").css("top","-50px");
-       });
-       $(".navbar-fixed-top").animate({top:'0',opacity:'1'},600);
-       })*/
+      var self = this;
+      bus.$on("nav",function(msg){
+        if(msg == "toheight")self.height();
+      });
     }
   }
 </script>
@@ -48,18 +56,37 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   /*导航栏整体样式*/
+  .header{
+    border:0;
+    padding:0;
+  }
   .navbar-default {
+    background: rgba(255,255,255,0);
+    opacity:0.2;
+    -webkit-transition: background 0.5s ;
+    -moz-transition: background 0.5s ;
+    -ms-transition: background 0.5s ;
+    -o-transition: background 0.5s ;
+    transition: background 0.5s ;
+  }
+  .navbar-default:hover{
     background-color: #4a86cf !important;
     border-color: #3968a1 !important;
   }
 
   .navbar {
     margin: 0 !important;
+    border-bottom:none !important;
   }
 
   .navbar-fixed-top {
     top: -50px;
     opacity: 0;
+  }
+
+  /*导航栏ul列表位置*/
+  .navbar-nav{
+    float:right;
   }
 
   /*导航元素样式*/
@@ -69,6 +96,8 @@
   }
 
   .navbar-default .navbar-nav > li > a {
+    width:100px;
+    text-align: center;
     color: #ffffff;
     text-decoration: none;
   }
@@ -76,8 +105,4 @@
     color:white;
   }
 
-  /*导航栏位置占领*/
-  .bg {
-    min-height: 50px;
-  }
 </style>

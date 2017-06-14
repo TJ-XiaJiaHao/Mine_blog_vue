@@ -2,6 +2,9 @@
   <div class="mainPage">
     <!--basic info -->
     <div class="basic-info box" align="center">
+      <div class="container ">
+        <h3 class="tittle">基本信息</h3>
+      </div>
       <div class="con">
         <div class="left">
           <div class="pic-box">
@@ -24,7 +27,7 @@
     <!--education info -->
     <div class="education box">
       <div class="container title">
-        <h3 class="tittle">个人介绍</h3>
+        <h3 class="tittle">学习经历</h3>
         <p class="abt-para">任何节约归根到底是时间的节约，掌握了时间，你就掌握了世界。</p>
       </div>
       <div class="col-md-6 abt-left ">
@@ -313,7 +316,7 @@
           closeButton: true,
           progressBar: true,
           showMethod: 'slideDown',
-          positionClass:'toast-bottom-full-width',
+          positionClass:'toast-bottom-right',
           timeOut: 4000
         };
         setTimeout(function(){ toastr.success("Welcom to my page,Sir!");},4000)
@@ -337,12 +340,14 @@
 
       //个人基本信息页动态切入切出函数
       basicInfoIn: function () {
+        //标题切出
+        $(".basic-info .tittle").animate({opacity: "1", marginTop: '0', marginBottom: '35px'}, 1000);
         //头像淡入
         setTimeout(function () {
           $(".pic-border").animate({opacity: '1'}, 1000);
           $(".pic").animate({opacity: '1'}, 1000);
           $(".pic").css({"transform": "scale(1)"})
-        }, 800);
+        }, 0);
         //信息表格淡入
         setTimeout(function () {
           $(".list-left").animate({opacity: '1', marginTop: '-10px'}, 1000);
@@ -350,6 +355,8 @@
         }, 0);
       },
       basicInfoOut: function () {
+        //标题切出
+        $(".basic-info .tittle").animate({opacity: "0", marginTop: '-15px', marginBottom: '50px'}, 1000);
         //头像淡出
         $(".pic-border").animate({opacity: '0'}, 300);
         $(".pic").animate({opacity: '0'}, 800);
@@ -402,7 +409,7 @@
           $(".accordion").css('marginLeft', '0');
         });
         //清空技能圆圈
-        $(".skills-content").animate({opacity: '0', marginTop: '-15px'}, 1000, function () {
+        $(".skills-content").animate({opacity: '0', marginTop: '15px'}, 1000, function () {
           $(".skills-content").html("");
         });
       },
@@ -456,7 +463,9 @@
       },
       skillsOut: function () {
         //标题切出
-        $(".more .tittle").animate({opacity: "0", marginTop: '45px', marginBottom: '65px'}, 1000);
+        setTimeout(function(){
+          $(".more .tittle").animate({opacity: "0", marginTop: '45px', marginBottom: '65px'}, 400);
+        },600)
         //技能条切出
         $(".skills-bars .progress").animate({opacity: '0', marginTop: '10px'}, 1000);
       },
@@ -483,7 +492,7 @@
       pageChange: function (from, to) {
         var self = this;
         var curScrollTop = $(".mainPage").scrollTop();                        //当前滚动条的距离
-        var clientHeight = $(window).height() - 50;                           //显示屏高度
+        var clientHeight = $(window).height() ;                              //显示屏高度
         this.pageOut(from);   //被替换页切出
         this.pageIn(to);      //替换页切入
         //滚动条滚回原始页面，实现无缝页面切换
@@ -502,7 +511,7 @@
         var self = this;
         $(".mainPage").scroll(function () {
           var curScrollTop = $(".mainPage").scrollTop();                        //当前滚动条的距离
-          var clientHeight = $(window).height() - 50;                           //显示屏高度
+          var clientHeight = $(window).height();                                //显示屏高度
           var currentPage = Math.floor(curScrollTop / clientHeight);            //当前理论页编号
           //如果正在动画切换，则屏蔽滚动条移动事件
           if (!self.canScroll) {
@@ -525,7 +534,7 @@
     mounted()
     {
       this.init();          //初始化
-      this.basicInfoIn();   //加载个人基本页
+      setTimeout(this.basicInfoIn,3600);   //加载个人基本页
       this.pageScroll();    //添加滚动条事件
     }
   }
@@ -538,7 +547,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
     width:  calc(100% + 17px);
-    height: calc(100% - 50px);
+    height: calc(100% - 0px);
     background-attachment: fixed;
     background-image: url(../assets/images/Home/bg.jpg);
   }
@@ -553,13 +562,18 @@
   .basic-info {
     width: 100%;
     height: 100%;
-    padding-top: 80px;
+    padding-top: 100px;
   }
   .basic-info .con {
     height: 500px;
     width: 1000px;
   }
 
+  /*标题*/
+  .basic-info .tittle{
+    margin:-15px 0 50px 0;
+    opacity:0;
+  }
   /*左边*/
   .basic-info .left {
     width: 50%;
@@ -635,7 +649,7 @@
     height: 100%;
     float: left;
     padding-top: 50px;
-    padding-left: 20px;
+    padding-left: 70px;
   }
   .basic-info .list-left, .basic-info .list-right {
     opacity: 0;
@@ -658,7 +672,7 @@
 
   /*教育经历*/
   .education {
-    padding: 0 40px 0 40px;
+    padding: 50px 40px 0 40px;
   }
   .title {
     padding-top: 35px;
@@ -697,6 +711,9 @@
   }
 
   /*项目经历*/
+  .employment{
+    padding: 100px 0 0 0;
+  }
   .employment .title {
     padding-top: 30px;
     padding-bottom: 50px;
@@ -732,7 +749,7 @@
 
   /*技能条页*/
   .more {
-    padding: 0px;
+    padding: 60px 0 0 0;
   }
   .more .tittle {
     margin-top: 45px;

@@ -61,7 +61,7 @@
                   from:"挑战杯参赛项目",
                   mainTec:"div + css + ajax + nodejs + jQuery",
                   stars:[true,true,true,true],
-                  link:'http://www.xjh197.cn/html/futures',
+                  link:'http://115.159.215.48/html/futures',
                   belong:1
                 },
                 {
@@ -71,7 +71,7 @@
                   from:"腾讯课堂20160312",
                   mainTec:"JS + transform + transition",
                   stars:[true,true],
-                  link:'http://www.xjh197.cn/html/threedme',
+                  link:'http://115.159.215.48/html/threedme',
                   belong:2
                 },
                 {
@@ -81,7 +81,7 @@
                   from:"腾讯课堂20160310",
                   mainTec:"div + css + JQuery",
                   stars:[true,true],
-                  link:'http://www.xjh197.cn/html/nav',
+                  link:'http://115.159.215.48/html/nav',
                   belong:2
                 },
                 {
@@ -91,7 +91,7 @@
                   from:"中山大学web课程课后练习",
                   mainTec:"transform + transition",
                   stars:[true,true],
-                  link:'http://www.xjh197.cn/html/arpha',
+                  link:'http://115.159.215.48/html/arpha',
                   belong:2
                 },
                 {
@@ -101,7 +101,7 @@
                   from:"腾讯课堂20160324",
                   mainTec:"jQuery + animate",
                   stars:[true,true],
-                  link:'http://www.xjh197.cn/html/youhuo',
+                  link:'http://115.159.215.48/html/youhuo',
                   belong:3
                 },
                 {
@@ -111,7 +111,7 @@
                   from:"百度前端学院",
                   mainTec:"THREEJS",
                   stars:[true,true,true],
-                  link:'http://www.xjh197.cn/html/car',
+                  link:'http://115.159.215.48/html/car',
                   belong:4
                 },
                 {
@@ -121,7 +121,7 @@
                   from:"动脑学院",
                   mainTec:"transform + JQuery",
                   stars:[true,true,true],
-                  link:'http://www.xjh197.cn/html/showProduct3D',
+                  link:'http://115.159.215.48/html/showProduct3D',
                   belong:4
                 },
                 {
@@ -131,7 +131,7 @@
                   from:"大众点评2015校招编程题",
                   mainTec:"transform + transition",
                   stars:[true,true],
-                  link:'http://www.xjh197.cn/html/clock',
+                  link:'http://115.159.215.48/html/clock',
                   belong:4
                 },
                 {
@@ -141,7 +141,7 @@
                   from:"web技术课程练习",
                   mainTec:"flex + @media",
                   stars:[true],
-                  link:'http://www.xjh197.cn/html/blog',
+                  link:'http://115.159.215.48/html/blog',
                   belong:5
                 },
                 {
@@ -151,7 +151,7 @@
                   from:"操作系统调度模块练习",
                   mainTec:"div + css + JQuery",
                   stars:[true,true],
-                  link:'http://www.xjh197.cn/html/lift',
+                  link:'http://115.159.215.48/html/lift',
                   belong:5
                 },
                 {
@@ -161,7 +161,7 @@
                   from:"腾讯课堂20160320",
                   mainTec:"div + css + JQuery",
                   stars:[true,true,true],
-                  link:'http://www.xjh197.cn/html/tianmao',
+                  link:'http://115.159.215.48/html/tianmao',
                   belong:6
                 },
                 {
@@ -171,7 +171,7 @@
                   from:"Java EE课程第一次讨论项目（废）",
                   mainTec:"div + css + animate",
                   stars:[true,true],
-                  link:'http://www.xjh197.cn/html/youji',
+                  link:'http://115.159.215.48/html/youji',
                   belong:6
                 },
                 {
@@ -181,7 +181,7 @@
                   from:"上创第一次讨论项目（废）",
                   mainTec:"div + css",
                   stars:[true,true],
-                  link:'http://www.xjh197.cn/html/projectcommunication',
+                  link:'http://115.159.215.48/html/projectcommunication',
                   belong:6
                 },
                 {
@@ -191,7 +191,7 @@
                   from:"中山大学web课程某次练习",
                   mainTec:"div + css",
                   stars:[true],
-                  link:'http://www.xjh197.cn/html/renzheshengui',
+                  link:'http://115.159.215.48/html/renzheshengui',
                   belong:6
                 }
               ]
@@ -232,6 +232,8 @@
       },
       mounted(){
         this.fadeIn();
+
+        bus.$emit("nav","toheight");
 
         //监听通信
         var self = this;
